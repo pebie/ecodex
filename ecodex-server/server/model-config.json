@@ -31,5 +31,9 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "ecodex": {
+    "dataSource": "db",
+    "public": true
   }
 }
