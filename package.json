@@ -6,7 +6,7 @@
     "build": "webpack --config ./webpack/webpack-config.js --progress --profile --colors",
     "watch": "webpack-dev-server --config ./webpack/dev-webpack-config.js --hot --inline --progress --colors",
     "test": "echo \"No unit tests and e2e tests yet\" && exit 1",
-    "start-dev": "nodemon ./server/app.js",
+    "start-dev": "node ./server/app.js",
     "lint": "eslint src"
   },
   "repository": {
@@ -70,6 +70,12 @@
     "lodash": "3.10.0",
     "react": "^0.13.0",
     "react-bootstrap": "^0.24.2",
-    "react-router": "~0.13.3"
+    "react-router": "~0.13.3",
+    "serve-favicon": "~2.3.0",
+    "morgan": "~1.6.1",
+    "method-override": "~2.3.5",
+    "express-session": "~1.11.3",
+    "multer": "~1.0.1",
+    "errorhandler": "~1.4.2"
   }
 }
