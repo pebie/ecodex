@@ -27,13 +27,14 @@ class AddDatasheet extends React.Component {
       <div className="row">
         <div className='col-sm-8'>
           <Panel header='Créer une nouvelle fiche technique' bsStyle='primary'>
-            <form>
+            Hello Datasheet Form !
+            /*<form>
               <Input label="Faction"
-                type="text"
-                ref="factionTextField"
-                bsStyle={this.renderClassValidationName()}
-                hasFeedback/>
-            </form>
+                     type="text"
+                     ref="factionTextField"
+                     bsStyle={this.renderClassValidationName()}
+                     hasFeedback/>
+            </form>*/
           </Panel>
         </div>
       </div>

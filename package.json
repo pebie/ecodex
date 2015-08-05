@@ -70,12 +70,6 @@
     "lodash": "3.10.0",
     "react": "^0.13.0",
     "react-bootstrap": "^0.24.2",
-    "react-router": "~0.13.3",
-    "serve-favicon": "~2.3.0",
-    "morgan": "~1.6.1",
-    "method-override": "~2.3.5",
-    "express-session": "~1.11.3",
-    "multer": "~1.0.1",
-    "errorhandler": "~1.4.2"
+    "react-router": "~0.13.3"
   }
 }
