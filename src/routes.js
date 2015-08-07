@@ -4,11 +4,11 @@
 import React from 'react';
 import {Route} from 'react-router';
 import App from './components/App';
-import AddDatasheet from './components/AddDatasheet';
+import DatasheetsSwager from './components/DatasheetsSwager';
 
 
 export default (
   <Route handler={App}>
-    <Route path='/' handler={AddDatasheet}/>
+    <Route path='/' handler={DatasheetsSwager}/>
   </Route>
 );

@@ -12,6 +12,9 @@ gulp.task('webpack-dev-server', function (callback) {
   new WebpackDevServer(webpack(myConfig), {
     publicPath: myConfig.output.publicPath,
     hot: true,
+    proxy: {
+      '*': 'http://localhost:5000'
+    },
     stats: {
       colors: true
     }
