@@ -3,11 +3,7 @@
   "version": "1.0.0",
   "description": "Boilerplate for ReactJS project with hot code reloading",
   "scripts": {
-    "build": "webpack --config ./webpack/webpack-config.js --progress --profile --colors",
-    "watch": "webpack-dev-server --config ./webpack/dev-webpack-config.js --hot --inline --progress --colors",
-    "test": "echo \"No unit tests and e2e tests yet\" && exit 1",
-    "start-dev": "node ./server/app.js",
-    "lint": "eslint src"
+    "test": "echo \"No unit tests and e2e tests yet\" && exit 1"
   },
   "repository": {
     "type": "git",

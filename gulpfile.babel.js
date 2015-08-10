@@ -1,20 +1,53 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var webpackConfig = require('./webpack/make-webpack-config');
+import process from 'process';
+import path from 'path';
+import gulp from 'gulp';
+import gutil from 'gulp-util';
+import webpack from 'webpack';
+import WebpackDevServer from 'webpack-dev-server';
+import webpackConfig from './webpack/make-webpack-config';
 
-// The development server (the recommended option for development)
 gulp.task('default', ['webpack-dev-server']);
 
-gulp.task('webpack-dev-server', function (callback) {
-  var myConfig = Object.create(webpackConfig());
+var options = {
+  separateStylesheet: true,
+  srcPath: path.join(process.cwd(), 'src')
+};
+
+gulp.task('prod', function (callback) {
+  process.env.NODE_ENV = 'production';
+  let myConfig = Object.create(webpackConfig(options));
+  options.minimize = true;
+  webpack(myConfig, function (err, stats) {
+    if (err) {
+      throw new gutil.PluginError('webpack-build-production', err);
+    }
+    gutil.log('webpack-build-production', stats.toString({
+      colors: true
+    }));
+    callback();
+  });
+});
+
+gulp.task('dev', function (callback) {
+  process.env.NODE_ENV = 'development';
+  options = {
+    hotComponents: true,
+    separateStylesheet: false,
+    srcPath: path.join(process.cwd(), 'src'),
+    debug: true,
+    devtool: 'eval-cheap-module-source-map'
+  };
+  let myConfig = Object.create(webpackConfig(options));
   new WebpackDevServer(webpack(myConfig), {
     publicPath: myConfig.output.publicPath,
     hot: true,
-    proxy: {
-      '*': 'http://localhost:5000'
-    },
+    historyApiFallback: true,
+    proxy: [
+      {
+        path: new RegExp('/api/(.*)'),
+        target: 'http://localhost:5000/'
+      }
+    ],
     stats: {
       colors: true
     }

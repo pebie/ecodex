@@ -2,6 +2,7 @@
  * Created by bouchez on 31/07/15.
  */
 import webpack from 'webpack';
+import process from 'process';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 module.exports = ()=> {
@@ -14,6 +15,15 @@ module.exports = ()=> {
     }),
     new webpack.NoErrorsPlugin()
   ];
+
+  if (process.env.NODE_ENV === 'production'){
+    plugins.concat(
+      [
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.UglifyJsPlugin()
+      ]
+    );
+  }
 
   return {
     get: (options)=> {

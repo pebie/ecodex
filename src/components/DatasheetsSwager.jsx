@@ -32,6 +32,8 @@ class DatasheetsSwager extends React.Component {
             <pre>
               <p>Unit name : {this.state.findOne.unitName}</p>
               <p>Unit cost : {this.state.findOne.pointsCost}</p>
+              <p>Unit composition : {this.state.findOne.unitComposition}</p>
+              <p>...</p>
             </pre>
             <span>
               {this.state.errorMessage}

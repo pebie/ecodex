@@ -5,10 +5,11 @@ import path from 'path';
 import process from 'process';
 
 module.exports = () => {
+  let outputDir = (process.env.NODE_ENV === 'production') ? 'dist' : 'tmp';
   return {
     get: (options)=> {
       return {
-        path: path.join(process.cwd(), 'tmp'),
+        path: path.join(process.cwd(), outputDir),
         publicPath: '/',
         filename: '[name].js',
         library: ['Example', '[name]'],

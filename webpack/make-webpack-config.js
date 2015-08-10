@@ -1,19 +1,10 @@
-import process from 'process';
-import path from 'path';
 import loadersConfig from './config/loaders';
 import pluginsConfig from './config/plugins';
-import entryConfig from './config/dev/entry';
-import outputConfig from './config/dev/output';
-import resolveConfig from './config/dev/resolve';
+import entryConfig from './config/entry';
+import outputConfig from './config/output';
+import resolveConfig from './config/resolve';
 
-module.exports = ()=> {
-  let options = {
-    hotComponents: true,
-    separateStylesheet: false,
-    srcPath: path.join(process.cwd(), 'src'),
-    debug: true,
-    devtool: 'eval-cheap-module-source-map'
-  };
+module.exports = (options)=> {
   let commonLoaders = loadersConfig().getCommons(options);
   let stylesheetLoaders = loadersConfig().getStylesheets(options);
   let plugins = pluginsConfig().get(options);
