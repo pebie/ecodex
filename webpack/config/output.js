@@ -5,7 +5,7 @@ import path from 'path';
 import process from 'process';
 
 module.exports = () => {
-  let outputDir = (process.env.NODE_ENV === 'production') ? 'dist' : 'tmp';
+  let outputDir = (process.env.NODE_ENV === 'production') ? './server/client' : 'tmp';
   return {
     get: (options)=> {
       return {

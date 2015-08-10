@@ -5,15 +5,21 @@ import gutil from 'gulp-util';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import webpackConfig from './webpack/make-webpack-config';
+import clean from 'gulp-clean';
 
-gulp.task('default', ['webpack-dev-server']);
+gulp.task('default', ['dev']);
 
 var options = {
   separateStylesheet: true,
   srcPath: path.join(process.cwd(), 'src')
 };
 
-gulp.task('prod', function (callback) {
+gulp.task('clean', function () {
+  return gulp.src('./server/client/', {read: false})
+    .pipe(clean());
+});
+
+gulp.task('prod', ['clean'], function (callback) {
   process.env.NODE_ENV = 'production';
   let myConfig = Object.create(webpackConfig(options));
   options.minimize = true;
