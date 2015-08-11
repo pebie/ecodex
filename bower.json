@@ -1,0 +1,21 @@
+{
+  "name": "ecodex",
+  "version": "1.0.0",
+  "homepage": "https://github.com/pebie/ecodex",
+  "authors": [
+    "Mikaël Bouchez <bouchez@fullsix.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "font-awesome": "~4.4.0",
+    "bootstrap-sass": "~3.3.5"
+  }
+}

@@ -17,25 +17,60 @@ module.exports = ()=> {
       ];
     },
 
-    getStylesheets: (options)=> {
-      let separateCSS = {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css!sass')
-      };
-
-      let dontSeparateCSS = {
-        test: /\.scss$/,
-        loaders: ['style', 'css', 'sass'],
-        include: [path.join(process.cwd(), 'src'), path.join(process.cwd(), 'node_modules')]
-      };
-
-      let sass = (options.separateStylesheet) ? separateCSS : dontSeparateCSS;
-
-      return [sass, {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        loader: 'url-loader?limit=100000'
-      }
+    getImages: (options)=> {
+      return [
+        {
+          test: /\.(jpe?g|png|gif|svg)$/i,
+          loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+          ]
+        }
       ];
+    },
+
+    getStylesheets: (options)=> {
+      let sass = {
+        test: /\.scss$/,
+        loader: 'style!css!sass'
+      };
+
+
+      let font = [
+        {
+          test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: 'url-loader?limit=10000&minetype=application/font-woff'
+        },
+        {
+          test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: 'file-loader'
+        }
+      ];
+
+
+      let html = {
+        test: /\.html$/,
+        loader: 'file-loader'
+      };
+
+      let less = {
+        test: /\.less$/,
+        loader: 'style!css!less'
+      };
+
+      let css = {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      };
+
+      /*let sass = (options.separateStylesheet) ? separateCSS : dontSeparateCSS;*/
+      /*let dontSeparateCSS = {
+       test: /\.scss$/,
+       include: [path.join(process.cwd(), 'src'), path.join(process.cwd(), 'node_modules')],
+       loaders: ['style', 'css', 'sass']
+       };*/
+
+      return [sass, font, html, less, css];
     }
   };
 };

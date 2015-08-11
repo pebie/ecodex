@@ -1,7 +1,6 @@
 import React from 'react';
-import DatasheetsStore from '../stores/DatasheetsStore';
-import DatasheetsActions from '../actions/DatasheetsActions';
-import {Button, Panel} from 'react-bootstrap';
+import DatasheetsStore from '../../stores/DatasheetsStore';
+import DatasheetsActions from '../../actions/DatasheetsActions';
 
 class DatasheetsSwager extends React.Component {
   constructor(props) {
@@ -24,11 +23,9 @@ class DatasheetsSwager extends React.Component {
 
   render() {
     return (
-      <div className='row'>
-        <div className='col-sm-8'>
-          <Panel header='API Tests' bsStyle='primary'>
-            <div>Swager !</div>
-            <Button onClick={DatasheetsActions.findOne.bind(this, null)}>FindOne</Button>
+      <div header='API Tests' bsStyle='primary'>
+        <h1>Swager !</h1>
+        <button onClick={DatasheetsActions.findOne.bind(this, null)}>FindOne</button>
             <pre>
               <p>Unit name : {this.state.findOne.unitName}</p>
               <p>Unit cost : {this.state.findOne.pointsCost}</p>
@@ -38,8 +35,6 @@ class DatasheetsSwager extends React.Component {
             <span>
               {this.state.errorMessage}
             </span>
-          </Panel>
-        </div>
       </div>
     );
   }

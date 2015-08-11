@@ -1,6 +1,6 @@
 import alt from '../altInstance';
 import DatasheetsApiUrl from '../constants/DatasheetsApiUrl';
-import $ from 'jQuery';
+import $ from 'jquery';
 
 class DatasheetsActions {
   constructor() {
