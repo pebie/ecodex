@@ -1,3 +1,5 @@
+import './_app.scss';
+
 import React, { Component } from 'react';
 import {RouteHandler} from 'react-router';
 import Navigation from './Navigation';

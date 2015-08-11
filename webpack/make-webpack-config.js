@@ -7,11 +7,15 @@ import resolveConfig from './config/resolve';
 module.exports = (options)=> {
   let commonLoaders = loadersConfig().getCommons(options);
   let stylesheetLoaders = loadersConfig().getStylesheets(options);
+  let imagesLoaders = loadersConfig().getImages(options);
   let plugins = pluginsConfig().get(options);
   let entry = entryConfig().get(options);
   let output = outputConfig().get(options);
   let resolve = resolveConfig().get(options);
-
+  let devServer = (process.env.NODE_ENV === 'production') ? null : {
+    contentBase: './tmp',
+    historyApiFallback: true
+  };
   return {
     target: 'web',
     cache: 'true',
@@ -19,14 +23,11 @@ module.exports = (options)=> {
     resolve: resolve,
     output: output,
     module: {
-      loaders: commonLoaders.concat(stylesheetLoaders)
+      loaders: commonLoaders.concat(stylesheetLoaders).concat(imagesLoaders)
     },
     plugins: plugins,
     debug: options.debug,
     devtool: options.devtool,
-    devServer: {
-      contentBase: './tmp',
-      historyApiFallback: true
-    }
+    devServer: devServer
   };
 };

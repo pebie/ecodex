@@ -46,27 +46,34 @@
     "gulp-size": "^1.2.3",
     "gulp-util": "^3.0.6",
     "gulp-webpack": "~1.5.0",
+    "image-webpack-loader": "^1.6.1",
+    "imagemin": "^3.2.0",
     "minimist": "^1.1.2",
     "node-sass": "~3.2.0",
+    "process": "~0.11.1",
     "react-hot-loader": "^1.2.7",
     "run-sequence": "^1.1.2",
     "sass-loader": "~1.0.3",
     "style-loader": "~0.12.3",
     "url-loader": "~0.5.6",
     "webpack": "^1.9.6",
-    "webpack-dev-server": "^1.8.2",
-    "process": "~0.11.1"
+    "webpack-dev-server": "^1.8.2"
   },
   "dependencies": {
     "alt": "^0.17.1",
+    "bootstrap-less": "^3.3.8",
     "bootstrap-sass": "~3.3.5",
     "gulp-clean": "^0.3.1",
     "gulp-shell": "^0.4.2",
     "html-webpack-plugin": "^1.6.0",
     "jquery": "~2.1.4",
+    "less": "^2.5.1",
+    "less-loader": "^2.2.0",
     "lodash": "3.10.0",
+    "magnific-popup": "^1.0.0",
     "react": "^0.13.0",
     "react-bootstrap": "^0.24.2",
-    "react-router": "~0.13.3"
+    "react-router": "~0.13.3",
+    "toastr": "^2.1.2"
   }
 }

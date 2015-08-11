@@ -17,6 +17,18 @@ module.exports = ()=> {
       ];
     },
 
+    getImages: (options)=> {
+      return [
+        {
+          test: /\.(jpe?g|png|gif|svg)$/i,
+          loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+          ]
+        }
+      ];
+    },
+
     getStylesheets: (options)=> {
       let separateCSS = {
         test: /\.scss$/,

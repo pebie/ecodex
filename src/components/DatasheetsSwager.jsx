@@ -24,11 +24,9 @@ class DatasheetsSwager extends React.Component {
 
   render() {
     return (
-      <div className='row'>
-        <div className='col-sm-8'>
-          <Panel header='API Tests' bsStyle='primary'>
-            <div>Swager !</div>
-            <Button onClick={DatasheetsActions.findOne.bind(this, null)}>FindOne</Button>
+      <Panel header='API Tests' bsStyle='primary'>
+        <div>Swager !</div>
+        <Button onClick={DatasheetsActions.findOne.bind(this, null)}>FindOne</Button>
             <pre>
               <p>Unit name : {this.state.findOne.unitName}</p>
               <p>Unit cost : {this.state.findOne.pointsCost}</p>
@@ -38,9 +36,7 @@ class DatasheetsSwager extends React.Component {
             <span>
               {this.state.errorMessage}
             </span>
-          </Panel>
-        </div>
-      </div>
+      </Panel>
     );
   }
 }

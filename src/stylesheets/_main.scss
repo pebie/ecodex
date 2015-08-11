@@ -1,5 +1,9 @@
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
-body{
-  background: orange;
-}
+@import '~toastr/toastr';
+@import '~magnific-popup/src/css/settings';
+@import '~magnific-popup/src/css/main';
+
+
+/* Overrides bootstrap */
+
