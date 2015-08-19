@@ -23,7 +23,7 @@ class DatasheetsSwager extends React.Component {
 
   render() {
     return (
-      <div header='API Tests' bsStyle='primary'>
+      <div header='API Tests' bsStyle='primary' className="container">
         <h1>Swager !</h1>
         <button onClick={DatasheetsActions.findOne.bind(this, null)}>FindOne</button>
             <pre>
