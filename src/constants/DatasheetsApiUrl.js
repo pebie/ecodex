@@ -1,11 +1,12 @@
 /**
  * Created by Pebie on 07/08/15.
  */
-const base = '/api/datasheets';
+const base = '/api';
 const DatasheetsApiUrl = {
   base: base,
-  findOne: base + '/findOne',
-  findOneWithFilter: base + '/findOne?filter='
+  findOne: base + '/datasheets/findOne',
+  findOneWithFilter: base + '/datasheets/findOne?filter=',
+  createFaction: base + '/factions'
 };
 
 export default DatasheetsApiUrl;

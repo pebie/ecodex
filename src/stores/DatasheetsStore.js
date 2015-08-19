@@ -16,6 +16,15 @@ class DatasheetsStore {
   onFindOneFail(error) {
     this.errorMessage = error.message;
   }
+
+  onCreateFactionSuccess(data) {
+    this.errorMessage = null;
+    this.findOne = data;
+  }
+
+  oncreateFactionFail(error) {
+    this.errorMessage = error.message;
+  }
 }
 
 export default alt.createStore(DatasheetsStore);

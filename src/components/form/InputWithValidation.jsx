@@ -5,7 +5,7 @@ import {Input, ButtonToolbar, Button} from 'react-bootstrap';
 let InputWithValidation = React.createClass({
 
   propTypes: {
-    action: React.PropTypes.string.isRequired,
+    action: React.PropTypes.func.isRequired,
     label: React.PropTypes.string.isRequired
   },
 
@@ -14,8 +14,7 @@ let InputWithValidation = React.createClass({
   render() {
     return (
       <form>
-        <Input bsStyle={this.state.style}
-               ref="input"
+        <Input ref="input"
                type="text"
                label={this.props.label}
                onChange={this.handleChange}

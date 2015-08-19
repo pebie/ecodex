@@ -33,7 +33,10 @@ let InputMixin = {
   },
 
   validHandler(){
-    console.log(this.props);
+    var data = {
+      'name': this.refs.input.getValue()
+    };
+    this.props.action(data);
   }
 };
 

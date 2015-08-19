@@ -27,6 +27,7 @@ class DatasheetsSwager extends React.Component {
         <h1>Swager !</h1>
         <button onClick={DatasheetsActions.findOne.bind(this, null)}>FindOne</button>
             <pre>
+              <p>Object ID : {this.state.findOne.id}</p>
               <p>Unit name : {this.state.findOne.unitName}</p>
               <p>Unit cost : {this.state.findOne.pointsCost}</p>
               <p>Unit composition : {this.state.findOne.unitComposition}</p>
