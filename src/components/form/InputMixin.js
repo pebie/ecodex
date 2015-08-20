@@ -33,10 +33,14 @@ let InputMixin = {
   },
 
   validHandler(){
-    var data = {
-      'name': this.refs.input.getValue()
+    var params = {
+      [this.props.setup.key]: this.refs.input.getValue()
     };
-    this.props.action(data);
+    var self = this;
+    this.props.setup.action(this.props.setup.url, params).then((success)=> {
+      this.resetValidation();
+      this.refs.input.value = 'GO';
+    });
   }
 };
 

@@ -1,46 +1,33 @@
 import alt from '../altInstance';
-import DatasheetsApiUrl from '../constants/DatasheetsApiUrl';
 import $ from 'jquery';
 
 class DatasheetsActions {
   constructor() {
     this.generateActions(
-      'findOneSuccess',
-      'findOneFail',
-      'createFactionSuccess',
-      'createFactionFail'
+      'addCollectionSuccess',
+      'addCollectionFail'
     );
   }
 
-  createFaction(faction) {
-    let url = DatasheetsApiUrl.createFaction;
-    $.ajax({
-      type: 'POST',
-      url: url,
-      data: faction
-    })
-      .done((data) => {
-        this.actions.createFactionSuccess(data);
+  create(url, params) {
+    var self = this;
+    return new Promise(function (resolve, reject) {
+      $.ajax({
+        type: 'POST',
+        url: url,
+        data: params
       })
-      .fail((data) => {
-        this.actions.createFactionFail(data.responseJSON.error);
-      });
+        .done((data) => {
+          self.actions.addCollectionSuccess(data);
+          resolve(data);
+        })
+        .fail((data) => {
+          self.actions.addCollectionFail(data.responseJSON.error);
+          reject(data);
+        });
+    });
   }
 
-
-  findOne(filter) {
-    let url = (filter) ? DatasheetsApiUrl.findOneWithFilter + filter : DatasheetsApiUrl.findOne;
-    $.ajax({
-      type: 'GET',
-      url: url
-    })
-      .done((data) => {
-        this.actions.findOneSuccess(data);
-      })
-      .fail((data) => {
-        this.actions.findOneFail(data.responseJSON.error);
-      });
-  }
 }
 
 export default alt.createActions(DatasheetsActions);

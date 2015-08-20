@@ -5,7 +5,7 @@ import {Input, ButtonToolbar, Button} from 'react-bootstrap';
 let InputWithValidation = React.createClass({
 
   propTypes: {
-    action: React.PropTypes.func.isRequired,
+    setup: React.PropTypes.object.isRequired,
     label: React.PropTypes.string.isRequired
   },
 

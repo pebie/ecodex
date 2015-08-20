@@ -4,25 +4,16 @@ import DatasheetsActions from '../actions/DatasheetsActions';
 class DatasheetsStore {
   constructor() {
     this.bindActions(DatasheetsActions);
-    this.findOne = {};
+    this.newCollection = {};
     this.errorMessage = null;
   }
 
-  onFindOneSuccess(data) {
+  onAddCollectionSuccess(data) {
     this.errorMessage = null;
-    this.findOne = data;
+    this.newCollection = data;
   }
 
-  onFindOneFail(error) {
-    this.errorMessage = error.message;
-  }
-
-  onCreateFactionSuccess(data) {
-    this.errorMessage = null;
-    this.findOne = data;
-  }
-
-  oncreateFactionFail(error) {
+  onAddCollectionFail(error) {
     this.errorMessage = error.message;
   }
 }
