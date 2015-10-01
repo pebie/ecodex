@@ -20,6 +20,7 @@ let DatasheetForm = React.createClass({
   render() {
     return (
       <div className="container">
+        v0.0.1
         <PageHeader >Créer une entrée de liste d'Armée</PageHeader>
         <TabbedArea defaultActiveKey={1} style={{marginBottom: '20px'}}>
           <TabPane eventKey={1} tab="Faction">

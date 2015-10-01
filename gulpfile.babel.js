@@ -51,7 +51,7 @@ gulp.task('dev', function (callback) {
     proxy: [
       {
         path: new RegExp('/api/(.*)'),
-        target: 'http://localhost:5000/'
+        target: 'http://localhost:3001/'
       }
     ],
     stats: {
