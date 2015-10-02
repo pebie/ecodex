@@ -14,11 +14,13 @@ var options = {
   srcPath: path.join(process.cwd(), 'src')
 };
 
+//Clean client repository
 gulp.task('clean', function () {
   return gulp.src('./server/client/', {read: false})
     .pipe(clean());
 });
 
+//Production environement
 gulp.task('prod', ['clean'], function (callback) {
   process.env.NODE_ENV = 'production';
   let myConfig = Object.create(webpackConfig(options));
@@ -34,7 +36,8 @@ gulp.task('prod', ['clean'], function (callback) {
   });
 });
 
-gulp.task('dev', function (callback) {
+//Development environement within a webpack server
+gulp.task('dev', function () {
   process.env.NODE_ENV = 'development';
   options = {
     hotComponents: true,

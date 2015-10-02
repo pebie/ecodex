@@ -62,8 +62,8 @@
   },
   "dependencies": {
     "alt": "^0.17.1",
+    "bluebird": "~2.9.34",
     "bootstrap-less": "^3.3.8",
-    "css-loader": "^0.15.6",
     "gulp-clean": "^0.3.1",
     "gulp-shell": "^0.4.2",
     "html-webpack-plugin": "^1.6.0",
@@ -76,7 +76,6 @@
     "react": "^0.13.0",
     "react-bootstrap": "^0.24.4",
     "react-router": "~0.13.3",
-    "toastr": "^2.1.2",
-    "bluebird": "~2.9.34"
+    "toastr": "^2.1.2"
   }
 }
