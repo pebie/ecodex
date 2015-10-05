@@ -11,7 +11,7 @@ gulp.task('default', ['dev']);
 
 var options = {
   separateStylesheet: true,
-  srcPath: path.join(process.cwd(), 'src')
+  srcPath: path.join(process.cwd(), 'doc')
 };
 
 //Clean client repository
@@ -42,7 +42,7 @@ gulp.task('dev', function () {
   options = {
     hotComponents: true,
     separateStylesheet: false,
-    srcPath: path.join(process.cwd(), 'src'),
+    srcPath: path.join(process.cwd(), 'doc'),
     debug: true,
     devtool: 'eval-cheap-module-source-map'
   };

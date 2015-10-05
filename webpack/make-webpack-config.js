@@ -1,9 +1,12 @@
+//First line seems to be mandatory :(
+//Pebie made this code !
 import loadersConfig from './config/loaders';
 import pluginsConfig from './config/plugins';
 import entryConfig from './config/entry';
 import outputConfig from './config/output';
 import resolveConfig from './config/resolve';
-
+//This is a documentation test
+//With multiline support
 module.exports = (options)=> {
   let commonLoaders = loadersConfig().getCommons(options);
   let stylesheetLoaders = loadersConfig().getStylesheets(options);
@@ -12,6 +15,7 @@ module.exports = (options)=> {
   let entry = entryConfig().get(options);
   let output = outputConfig().get(options);
   let resolve = resolveConfig().get(options);
+  //One comment line
   let devServer = (process.env.NODE_ENV === 'production') ? null : {
     contentBase: './tmp',
     historyApiFallback: true

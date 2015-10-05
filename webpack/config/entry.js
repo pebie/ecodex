@@ -1,6 +1,6 @@
 /**
- * Created by bouchez on 31/07/15.
- */
+* Created by bouchez on 31/07/15.
+*/
 import path from 'path';
 import process from 'process';
 
@@ -24,4 +24,3 @@ module.exports = ()=> {
     }
   };
 };
-

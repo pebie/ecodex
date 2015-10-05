@@ -13,7 +13,7 @@ module.exports = ()=> {
     new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
     new HtmlWebpackPlugin({
       inject: true,
-      template: './src/index.html'
+      template: './doc/index.html'
     }),
     new webpack.NoErrorsPlugin(),
     new BowerWebpackPlugin({excludes: /.*\.less/}),

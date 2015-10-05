@@ -7,7 +7,7 @@ import process from 'process';
 module.exports = () => {
   let outputDir = (process.env.NODE_ENV === 'production') ? './server/client' : 'tmp';
   return {
-    get: (options)=> {
+    get: ()=> {
       return {
         path: path.join(process.cwd(), outputDir),
         publicPath: '/',

@@ -3,7 +3,6 @@
  */
 import path from 'path';
 import process from 'process';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 module.exports = ()=> {
   return {
@@ -12,12 +11,12 @@ module.exports = ()=> {
         {
           test: /\.jsx?$/,
           loaders: options.hotComponents ? ['react-hot', 'babel'] : ['babel'],
-          include: path.join(process.cwd(), 'src')
+          include: path.join(process.cwd(), 'doc')
         }
       ];
     },
 
-    getImages: (options)=> {
+    getImages: ()=> {
       return [
         {
           test: /\.(jpe?g|png|gif|svg)$/i,
@@ -29,7 +28,7 @@ module.exports = ()=> {
       ];
     },
 
-    getStylesheets: (options)=> {
+    getStylesheets: ()=> {
       let sass = {
         test: /\.scss$/,
         loader: 'style!css!sass'
